@@ -26,8 +26,7 @@ function validarDatosRegistro() {
     // ----- Asignar a variables de Sesión ----//
     $_SESSION['datos'] = $datos;
     $_SESSION['errores'] = $errores;
-    $_SESSION['hayErrores'] =
-            ($errores[0] || $errores[1]);
+    $_SESSION['hayErrores'] = ($errores[0] || $errores[1]);
     
 }
 
@@ -41,9 +40,7 @@ if ($_SESSION['hayErrores']) {
     $db = conectaBd();
     $titulo = $_SESSION['datos'][0];
     $url = $_SESSION['datos'][1];
-    $consulta = "INSERT INTO software
-(titulo, url)
-VALUES (:titulo, :url)";
+    $consulta = "INSERT INTO software (titulo, url) VALUES (:titulo, :url)";
     $resultado = $db->prepare($consulta);
     if ($resultado->execute(array(":titulo" => $titulo, ":url" => $url))) {
         unset($_SESSION['datos']);
