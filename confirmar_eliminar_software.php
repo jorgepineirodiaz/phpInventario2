@@ -1,4 +1,7 @@
-<?php require_once 'funciones_bd.php'; ?>
+<?php
+session_start();
+require_once 'funciones_bd.php';
+?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
